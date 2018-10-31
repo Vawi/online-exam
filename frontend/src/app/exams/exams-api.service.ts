@@ -1,8 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
-import { catchError } from 'rxjs/operators';
 import {API_URL} from '../env';
 import {Exam} from './exam.model';
 
@@ -18,9 +17,8 @@ export class ExamsApiService {
 
   // GET list of public, future events
   getExams(): Observable<Exam[]> {
-
     return this.http
       .get(`${API_URL}/exams`)
-      
+      .catch(ExamsApiService._handleError);
   }
 }

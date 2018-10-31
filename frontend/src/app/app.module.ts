@@ -1,8 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 import {ExamsApiService} from './exams/exams-api.service';
 
 @NgModule({
@@ -13,10 +13,8 @@ import {ExamsApiService} from './exams/exams-api.service';
     BrowserModule,
     HttpClientModule,
   ],
-  providers: [
-    ExamsApiService
-  ],
+  providers: [ExamsApiService],
   bootstrap: [AppComponent]
 })
-
-export class AppModule { }
+export class AppModule {
+}
