@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import 'rxjs/add/operator/catch';
+import {Observable} from 'rxjs/Observable';
 import { catchError } from 'rxjs/operators';
 import {API_URL} from '../env';
 import {Exam} from './exam.model';
