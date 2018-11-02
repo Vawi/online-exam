@@ -6,8 +6,11 @@ import {RouterModule, Routes} from '@angular/router';
 import {ExamsComponent} from './exams/exams.component';
 import {AppComponent} from './app.component';
 import {ExamsApiService} from './exams/exams-api.service';
+import * as Auth0 from 'auth0-web';
+import {CallbackComponent} from './callback.component';
 
 const appRoutes: Routes = [
+  { path: 'callback', component: CallbackComponent},
   { path: 'new-exam', component: ExamFormComponent },
   { path: '', component: ExamsComponent },
 ];
@@ -17,6 +20,7 @@ const appRoutes: Routes = [
     AppComponent,
     ExamFormComponent,
     ExamsComponent,
+    CallbackComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,4 +33,13 @@ const appRoutes: Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule {
+  constructor() {
+    Auth0.configure({
+      domain: 'vawi.eu.auth0.com',
+      audience: 'https://online-exam.digituz.com.br',
+      clientID: 'nZyMvpOGuEarYW2OyI5ZN0uB3JsXSo01',
+      redirectUri: 'http://localhost:4200/callback',
+      scope: 'openid profile manage:exams'
+    });
+  }
 }
