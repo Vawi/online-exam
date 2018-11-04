@@ -8,6 +8,8 @@ import {AppComponent} from './app.component';
 import {ExamsApiService} from './exams/exams-api.service';
 import * as Auth0 from 'auth0-web';
 import {CallbackComponent} from './callback.component';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {MatToolbarModule, MatButtonModule} from '@angular/material';
 
 const appRoutes: Routes = [
   { path: 'callback', component: CallbackComponent},
@@ -28,6 +30,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes,
     ),
+    NoopAnimationsModule,
+    MatButtonModule,
+    MatToolbarModule,
   ],
   providers: [ExamsApiService],
   bootstrap: [AppComponent]
