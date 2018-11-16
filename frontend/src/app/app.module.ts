@@ -9,7 +9,7 @@ import {ExamsApiService} from './services/exams-api.service';
 import * as Auth0 from 'auth0-web';
 import {CallbackComponent} from './callback/callback.component';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {MatToolbarModule, MatButtonModule, MatCardModule
+import {MatToolbarModule, MatButtonModule, MatCardModule, MatInputModule
 } from '@angular/material';
 
 const appRoutes: Routes = [
@@ -35,6 +35,7 @@ const appRoutes: Routes = [
     MatButtonModule,
     MatToolbarModule,
     MatCardModule,
+    MatInputModule,
   ],
   providers: [ExamsApiService],
   bootstrap: [AppComponent]

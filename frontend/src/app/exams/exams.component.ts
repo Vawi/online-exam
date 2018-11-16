@@ -11,7 +11,7 @@ import {ExamsApiService} from '../services/exams-api.service';
   })
 
 export class ExamsComponent implements OnInit, OnDestroy {
-    
+
     examsListSubs: Subscription;
     examsList: Exam[];
     authentificated = false;
@@ -21,14 +21,14 @@ export class ExamsComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.examsListSubs = this.examsApi
-            .getExams()
-            .subscribe(res => {
-                this.examsList = res
+          .getExams()
+          .subscribe(res => {
+              this.examsList = res;
             },
             console.error
-        );
+          );
         const self = this;
-        Auth0.subscribe((authentificated) => (self.authentificated = authentificated));
+        Auth0.subscribe((authenticated) => (self.authentificated = authenticated));
     }
 
     ngOnDestroy() {
@@ -49,11 +49,11 @@ export class ExamsComponent implements OnInit, OnDestroy {
             }, console.error);
     }
 
-    idAdmin() {
+    isAdmin() {
         if (!Auth0.isAuthenticated()) return false;
 
         const roles = Auth0.getProfile()['https://online-exams.com/roles'];
-        return roles.inclues('admin');
+        return roles.includes('admin');
     }
 }
   
