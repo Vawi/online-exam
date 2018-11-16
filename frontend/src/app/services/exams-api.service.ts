@@ -3,7 +3,7 @@ import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import { catchError } from 'rxjs/operators';
 import {API_URL} from '../env';
-import {Exam} from './exam.model';
+import {Exam} from '../models/exam.model';
 import * as Auth0 from 'auth0-web';
 
 @Injectable()
