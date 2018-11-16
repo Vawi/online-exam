@@ -11,6 +11,7 @@ import {ExamsApiService} from '../services/exams-api.service';
   })
 
 export class ExamsComponent implements OnInit, OnDestroy {
+    
     examsListSubs: Subscription;
     examsList: Exam[];
     authentificated = false;

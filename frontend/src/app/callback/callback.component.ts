@@ -4,9 +4,7 @@ import {Router} from "@angular/router";
 
 @Component({
     selector: 'callback',
-    template: `
-    <div>Loading authentification details...</div>
-    `,
+    templateUrl: './callback.component.html',
 })
 
 export class CallbackComponent implements OnInit {

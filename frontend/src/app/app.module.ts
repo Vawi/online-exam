@@ -7,7 +7,7 @@ import {ExamsComponent} from './exams/exams.component';
 import {AppComponent} from './app.component';
 import {ExamsApiService} from './services/exams-api.service';
 import * as Auth0 from 'auth0-web';
-import {CallbackComponent} from './callback.component';
+import {CallbackComponent} from './callback/callback.component';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MatToolbarModule, MatButtonModule, MatCardModule
 } from '@angular/material';
